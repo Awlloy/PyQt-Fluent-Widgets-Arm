@@ -3,7 +3,7 @@ from qfluentwidgets import LineEdit, SpinBox, DoubleSpinBox, TimeEdit, DateTimeE
 
 from .gallery_interface import GalleryInterface
 from ..common.translator import Translator
-
+from PyQt5.QtGui import QTextDocument
 
 class TextInterface(GalleryInterface):
     """ Text interface """
@@ -63,8 +63,12 @@ class TextInterface(GalleryInterface):
 
         # text edit
         textEdit = TextEdit(self)
-        textEdit.setMarkdown(
+
+        document  = QTextDocument()
+        document.setPlainText(
             "## Steel Ball Run \n * Johnny Joestar 🦄 \n * Gyro Zeppeli 🐴 ")
+        textEdit.setHtml(document .toHtml())
+
         textEdit.setFixedHeight(150)
         self.addExampleCard(
             title=self.tr("A simple TextEdit"),

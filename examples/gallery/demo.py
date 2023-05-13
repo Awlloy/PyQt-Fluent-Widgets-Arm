@@ -13,14 +13,13 @@ from app.view.main_window import MainWindow
 
 # enable dpi scale
 if cfg.get(cfg.dpiScale) == "Auto":
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    # QApplication.setHighDpiScaleFactorRoundingPolicy(
+    #     Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 else:
     os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "0"
     os.environ["QT_SCALE_FACTOR"] = str(cfg.get(cfg.dpiScale))
-
-QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
 
 # create application
 app = QApplication(sys.argv)

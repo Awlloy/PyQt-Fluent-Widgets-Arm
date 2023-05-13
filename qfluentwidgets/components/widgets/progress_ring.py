@@ -18,7 +18,9 @@ class ProgressRing(ProgressBar):
         self.setFixedSize(100, 100)
 
         font = QFont()
-        font.setFamilies(['Segoe UI', 'Microsoft YaHei'])
+        # font.setFamilies(['Segoe UI', 'Microsoft YaHei'])
+        for f in ['Segoe UI', 'Microsoft YaHei']:
+            font.setFamily(f)
         font.setPixelSize(14)
         self.setFont(font)
 

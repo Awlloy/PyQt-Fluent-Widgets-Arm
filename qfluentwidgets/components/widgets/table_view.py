@@ -1,7 +1,7 @@
 # coding: utf-8
 from typing import List, Union
 
-from PyQt5.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel
+from PyQt5.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel, QSize
 from PyQt5.QtGui import QPainter, QColor, QKeyEvent, QPalette
 from PyQt5.QtWidgets import (QStyledItemDelegate, QApplication, QStyleOptionViewItem,
                              QTableView, QTableWidget, QWidget, QTableWidgetItem)
@@ -36,7 +36,8 @@ class TableItemDelegate(QStyledItemDelegate):
     def sizeHint(self, option, index):
         # increase original sizeHint to accommodate space needed for border
         size = super().sizeHint(option, index)
-        size = size.grownBy(QMargins(0, self.margin, 0, self.margin))
+        # size = size.grownBy(QMargins(0, self.margin, 0, self.margin))
+        size = size.expandedTo(QSize(size.width(), size.height() + 2 * self.margin))
         return size
 
     def createEditor(self, parent: QWidget, option: QStyleOptionViewItem, index: QModelIndex) -> QWidget:

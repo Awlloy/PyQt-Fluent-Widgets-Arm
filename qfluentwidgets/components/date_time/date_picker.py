@@ -1,5 +1,5 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt, pyqtSignal, QDate, QCalendar
+from PyQt5.QtCore import Qt, pyqtSignal, QDate #, QCalendar
 
 from .picker_base import PickerBase, PickerPanel, PickerColumnFormatter, DigitFormatter
 
@@ -12,7 +12,7 @@ class DatePickerBase(PickerBase):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.date = QDate()
-        self.calendar = QCalendar()
+        # self.calendar = QCalendar()
         self._yearFormatter = None
         self._monthFormatter = None
         self._dayFormatter = None
@@ -161,7 +161,8 @@ class DatePicker(DatePickerBase):
             self.monthIndex, panel.columnValue(self.monthIndex))
         year = self.decodeValue(
             self.yearIndex, panel.columnValue(self.yearIndex))
-        days = self.calendar.daysInMonth(month, year)
+        # days = self.calendar.daysInMonth(month, year)
+        days = QDate(year, month, 1).daysInMonth()
 
         # update days
         c = panel.column(self.dayIndex)

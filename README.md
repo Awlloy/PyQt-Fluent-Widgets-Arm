@@ -2,19 +2,15 @@
   <img width="18%" align="center" src="https://raw.githubusercontent.com/zhiyiYo/PyQt-Fluent-Widgets/master/docs/source/_static/logo.png" alt="logo">
 </p>
   <h1 align="center">
-  PyQt-Fluent-Widgets
+  PyQt-Fluent-Widgets-Arm
 </h1>
 <p align="center">
-  A fluent design widgets library based on PyQt5
+  A fluent design widgets library based on PyQt5 for Arm64
 </p>
 
 <p align="center">
   <a style="text-decoration:none">
-    <img src="https://img.shields.io/badge/Platform-Win32%20|%20Linux%20|%20macOS-blue?color=#4ec820" alt="Platform Win32 | Linux | macOS"/>
-  </a>
-
-  <a style="text-decoration:none">
-    <img src="https://static.pepy.tech/personalized-badge/pyqt-fluent-widgets?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads" alt="Download"/>
+    <img src="https://img.shields.io/badge/Platform-%20Linux%20-blue?color=#4ec820" alt="Platform Linux"/>
   </a>
 
   <a style="text-decoration:none">
@@ -22,27 +18,40 @@
   </a>
 </p>
 
-<p align="center">
-English | <a href="docs/README_zh.md">简体中文</a>
-</p>
 
 ![Interface](https://raw.githubusercontent.com/zhiyiYo/PyQt-Fluent-Widgets/master/docs/source/_static/Interface.jpg)
 
+Support for component adaptation of pyqt5 built on source code.
+## Build PyQt5 5.15.0
+  [PyQt5 5.15.0 source code](https://files.pythonhosted.org/packages/8c/90/82c62bbbadcca98e8c6fa84f1a638de1ed1c89e85368241e9cc43fcbc320/PyQt5-5.15.0.tar.gz)
+
+```
+sudo apt-get install qt5-default libqt5svg5-dev  qtmultimedia5-dev libqt5x11extras5-dev libqt5remoteobjects5-dev libqt5xmlpatterns5-dev
+```
+
+
+
+```
+pip install sip pyqt5-sip 
+cd PyQt5-5.15.0
+python3 configure.py
+make
+make install
+```
+
+
 
 ## Install
+
 To install lite version (`AcrylicLabel` is not available):
 ```shell
-pip install PyQt-Fluent-Widgets -i https://pypi.org/simple/
+cd PyQt-Fluent-Widgets-Arm
+python ./setup.py install
 ```
-Or install full-featured version:
-```shell
-pip install "PyQt-Fluent-Widgets[full]" -i https://pypi.org/simple/
-```
-
-If you are using PySide2, PySide6 or PyQt6, you can download the code in [PySide2](https://github.com/zhiyiYo/PyQt-Fluent-Widgets/tree/PySide2), [PySide6](https://github.com/zhiyiYo/PyQt-Fluent-Widgets/tree/PySide6) or [PyQt6](https://github.com/zhiyiYo/PyQt-Fluent-Widgets/tree/PyQt6) branch.
 
 > **Warning**
-> Don't install PyQt-Fluent-Widgets, PyQt6-Fluent-Widgets, PySide2-Fluent-Widgets and PySide6-Fluent-Widgets at the same time, because their package names are all `qfluentwidgets`.
+> Only pyqt5 is supported.
+
 
 
 ## Run Example
@@ -51,8 +60,6 @@ After installing PyQt-Fluent-Widgets package using pip, you can run any demo in 
 cd examples/gallery
 python demo.py
 ```
-
-If you encounter `ImportError: cannot import name 'XXX' from 'qfluentwidgets'`, it indicates that the package version you installed is too low. You can replace the mirror source with https://pypi.org/simple and reinstall again.
 
 ## Documentation
 Want to know more about PyQt-Fluent-Widgets? Please read the [help document](https://pyqt-fluent-widgets.readthedocs.io/) 👈
@@ -64,12 +71,6 @@ Check out this [▶ example video](https://www.bilibili.com/video/BV12c411L73q) 
 You can use PyQt-Fluent-Widgets in QtDesigner directly by running `python ./tools/designer.py`. If the operation is successful, you should be able to see the PyQt-Fluent-Widgets in the sidebar of QtDesigner.
 > **Note**
 > It is recommended to install pyqt5-tools and PyQt-Fluent-Widgets in a virtual environment. Please make sure **PyQt-Frameless-Window >= 0.2.7**.
-
-## Support
-If this project helps you a lot and you want to support the development and maintenance of this project, feel free to sponsor me via [爱发电](https://afdian.net/a/zhiyiYo) or [ko-fi](https://ko-fi.com/zhiyiYo). Your support is highly appreciated 🥰
-
-## Join with Us
-You can join our [🚩 Discord channel](https://discord.gg/mYZME3wraK) to communicate with us. You can share your findings, thoughts and ideas on improving PyQt-Fluent-Widgets 🚀
 
 ## See Also
 Here are some projects that use PyQt-Fluent-Widgets:
