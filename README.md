@@ -26,7 +26,7 @@ Support for component adaptation of pyqt5 built on source code.
   [PyQt5 5.15.0 source code](https://files.pythonhosted.org/packages/8c/90/82c62bbbadcca98e8c6fa84f1a638de1ed1c89e85368241e9cc43fcbc320/PyQt5-5.15.0.tar.gz)
 
 ```
-sudo apt-get install qt5-default libqt5svg5-dev  qtmultimedia5-dev libqt5x11extras5-dev libqt5remoteobjects5-dev libqt5xmlpatterns5-dev
+sudo apt-get install qt5-default libqt5svg5-dev  qtmultimedia5-dev libqt5x11extras5-dev libqt5remoteobjects5-dev libqt5xmlpatterns5-dev qttools5-dev-tools
 ```
 
 
